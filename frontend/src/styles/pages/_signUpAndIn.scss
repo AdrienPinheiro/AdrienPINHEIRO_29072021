@@ -1,0 +1,38 @@
+.logs{
+    padding-top: 100px;
+    background-image: url("../img/background/background-forest.png");
+    height: 800px;
+    .logs-header{
+        .logs-btn{
+            padding-left: 50px;
+            font-size: 30px;
+            color: white;
+        }
+    }
+    .logs-page{
+        background-image: url("../img/background/texture-paper.png");
+        margin: 0 100px;
+        .logs-container{
+            .connection-form{
+                .form-container{
+                    text-align: center;
+                    ul{
+                        padding: 0;
+                        color: white;
+                        .active-btn{
+                            border: 3px solid white;
+                        }
+                    }
+                    #signInForm{
+                        color: white;
+                        width: auto;
+                    }
+                    #signUpForm{
+                        color: white;
+                        width: auto;
+                    }
+                }
+            }
+        }
+    }
+}

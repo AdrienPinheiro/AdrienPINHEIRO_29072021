@@ -1,0 +1,64 @@
+.nav-container{
+    height: auto;
+    box-shadow: 2px 5px 61px 5px rgba(136,136,136,0.75);
+    width: $col12;
+    .no-connected{
+        font-size: 20px;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        display: flex;
+        .logo{
+            height: auto;
+            width: $col6;
+            align-self: center;
+        }
+        .logo-img{
+            padding: 30px;
+            img{
+                width: auto;
+            }
+        }
+        .no-connected-menu{
+            width: $col6;
+            padding: 30px;
+            margin: 0;
+            text-align: right;
+            align-self: center;
+            .accueil-btn{
+                font-size: 20px;
+            }
+        }
+    }
+    .connected{
+        font-size: 20px;
+        flex-wrap: nowrap;
+        flex-direction: row;
+        display: flex;
+        .logo{
+            height: auto;
+            width: $col6;
+            align-self: center;
+            .logo-img{
+                padding: 30px;
+                img{
+                    width: auto;
+                }
+            }
+        }
+        .connected-menu{
+            width: $col6;
+            padding-right: 30px;
+            margin: 0;
+            text-align: right;
+            .welcome{
+                font-weight: bold;
+            }
+            .option:hover{
+                font-weight: bold;
+            }
+            .deconnexion:hover{
+                font-weight: bold;
+            }
+        }        
+    }
+}

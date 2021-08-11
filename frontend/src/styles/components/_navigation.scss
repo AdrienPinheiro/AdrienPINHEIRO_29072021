@@ -1,0 +1,14 @@
+.navigation{
+    margin: 20px;
+    display: flex;
+
+    a{
+        margin: 10px;
+        padding: 10px;
+        position: relative;
+    }
+
+    .nav-active{
+        border: 1px solid black;
+    }
+}
