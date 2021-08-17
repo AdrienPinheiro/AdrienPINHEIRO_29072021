@@ -1,11 +1,24 @@
+import axios from 'axios';
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
+import Logout from '../Log/Logout';
 
-const DeleteProfil = (id) => {
+const DeleteProfil = () => {
 
-    const dispatch = useDispatch();
+    const userData = useSelector((state) => state.userReducer)
 
-    const deleteProfil = () => dispatch(deleteProfil(id));
+    const deleteProfil = () => {
+
+        axios({
+            method: "delete",
+            ulr: `${process.env.REACT_APP_API_URL}option/`,
+            data: {
+                id: userData.id
+            }
+        })
+            .then(() => Logout())
+            .catch((err) => console.log(err));
+    }
 
     return (
 

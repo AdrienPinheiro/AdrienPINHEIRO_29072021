@@ -10,7 +10,10 @@ const auth = require('../middleware/auth');
 router.post('/signup', multer, userCtrl.signup);
 router.post('/login', multer, userCtrl.login);
 
+router.get('/users', userCtrl.getAll);
+
 router.post('/id', userCtrl.getOne);
+
 
 router.put('/option/', multer, userCtrl.modify);
 

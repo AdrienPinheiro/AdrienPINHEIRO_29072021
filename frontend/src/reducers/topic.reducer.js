@@ -1,10 +1,10 @@
-import { GET_POSTS } from "../actions/post.actions";
+import { GET_TOPICS } from "../actions/topic.actions";
 
 const initialState = {};
 
 export default function postReducer(state = initialState, action) {
     switch (action.type) {
-        case GET_POSTS:
+        case GET_TOPICS:
             return action.payload;
         default:
             return state;

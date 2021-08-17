@@ -104,7 +104,7 @@ exports.modify = (req, res, next) => {
     lastname: req.body.lastname,
     pseudo: req.body.pseudo,
   },
-  {attribute: ['id'], where: {id: userId}})
+  {attribute: ['id', 'firstname', 'lastname', 'pseudo', 'email', 'isAdmin'], where: {id: userId}})
   .then(() => res.status(200).json({message: "Modifications enregistrées !"}))
   .catch((error) => res.status(500).json({error}));
 };
@@ -129,4 +129,12 @@ exports.getOne = (req, res, next) => {
   User.findOne({attributes: [ 'id', 'firstname', 'lastname', 'pseudo', 'email', 'isAdmin' ],where: { id: userId }})
   .then((user) => res.status(200).json({user}))
   .catch((error) => res.status(400).json({error}))
+}
+
+// Permet de prendre tout les utilisateurs
+
+exports.getAll = (req, res) => {
+  User.findAll({attributes: [ 'id', 'firstname', 'lastname', 'pseudo', 'email', 'isAdmin' ]})
+  .then((user) => res.status(200).json(user))
+  .catch(err => console.log(err));
 }

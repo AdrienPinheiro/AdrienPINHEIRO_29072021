@@ -1,22 +1,38 @@
-import React /*{ useEffect, useState }*/ from 'react';
-//import { useSelector } from 'react-redux';
+import React ,{ useEffect, useState } from 'react';
+import { useSelector } from 'react-redux';
 
-const Card = ({post}) => {
+const Card = ({topic}) => {
 
-   // const [isLoading, setIsLoading] = useState(true);
-   // const usersData = useSelector((state) => state.usersReducer);
-   // const userData = useSelector((state) => state.userReducer);
+    function isEmpty(strIn)
+    {
+        if (strIn === undefined)
+        {
+            return true;
+        }
+        else if(strIn == null)
+        {
+            return true;
+        }
+        else if(strIn === "")
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 
-   // useEffect(() => {
-   //     !isEmpty(usersData[0]) && setIsLoading(false);
-   // }, [usersData])
+   const [isLoading, setIsLoading] = useState(true);
+   const usersData = useSelector((state) => state.usersReducer);
+   //const userData = useSelector((state) => state.userReducer);
 
-    return (
-        <div>
+   useEffect(() => {
+       !isEmpty(usersData[0]) && setIsLoading(false);
+   }, [usersData])
 
-        </div>
-        /*
-        <li className="card-container" key={post.id}>
+    return (        
+        <li className="card-container" key={topic.id}>
             {isLoading ? (
                 <i className="fas fa-spinner fa-spin"></i>
             ) : (
@@ -30,7 +46,7 @@ const Card = ({post}) => {
                     </div>
                 </>
             )}
-        </li>*/
+        </li>
     );
 };
 

@@ -8,27 +8,28 @@ const UpProfil = () => {
     const [firstname, setFirstname] = useState('');
     const [lastname, setLastname] = useState('');
     const [pseudo, setPseudo] = useState('');
-    const userData = useSelector((state) => state.userReducer);
+    const userData = useSelector((state) => state.userReducer)
 
 
 
-    const handleUpdateProfil = async (e) => {
-        e.preventDefault();  
-        await axios ({
+    const handleUpdateProfil = (e) => {
+        e.preventDefault(); 
+        
+        const data = {
+            id: userData.id,
+            firstname,
+            lastname,
+            pseudo
+        }
+
+        axios({
             method: "put",
-            ulr: `${process.env.REACT_APP_API_URL}option/`,
-            data: {
-                id: userData.id,
-                firstname,
-                lastname,
-                pseudo
-            }
+            ulr: `${process.env.REACT_APP_API_URL}option/`, data})
+        .then((res) => {
+            console.log(res);
         })
-        .then((res) => console.log(res))
         .catch((err) => console.log(err))
     }
-
-        //dispatch(updateProfil(data, userData.id));}
 
     return (
         <div className="profil-form">

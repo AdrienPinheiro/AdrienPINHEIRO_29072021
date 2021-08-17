@@ -1,33 +1,31 @@
 import React, { useEffect, useState } from 'react';
-import { getPosts } from '../actions/post.actions';
-import { useDispatch /*useSelector*/ } from 'react-redux'
-//import Card from './Post/Card';
+import { getTopics } from '../actions/topic.actions';
+import { useDispatch, useSelector } from 'react-redux'
+import Card from './Post/Card';
 
-const Thread = () => {
+const Thread = (topic) => {
 
-    const [loadPost, setLoadPost] = useState(true);
+    const [loadTopic, setLoadTopic] = useState(true);
     const dispatch = useDispatch();
-    //const posts = useSelector((state) => state.postReducer)
+    const Topics = useSelector((state) => state.topicReducer)
 
     useEffect(() => {
-        if(loadPost) {
-            dispatch(getPosts());
-            setLoadPost(false)
+        if(loadTopic) {
+            dispatch(getTopics());
+            setLoadTopic(false)
         }
-    }, [loadPost, dispatch])
+    }, [loadTopic, dispatch])
 
     return (
-        <div>
-            
-        </div>
-       /* <div className="thread-container">
+    
+       <div className="thread-container">
             <ul>
-                {post[0] === null && 
-                    posts.map((post) => {
-                    return <Card post={post} key={post.id}/>
+                {topic[0] === null && 
+                    Topics.map((topic) => {
+                    return <Card topic={topic} key={topic.id}/>
                  })}
             </ul>
-        </div>*/
+        </div>
     );
 };
 
