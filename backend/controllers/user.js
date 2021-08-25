@@ -44,7 +44,7 @@ exports.signup = (req, res, next) => {
             pseudo: pseudo,
             email: email,
             password: hash,
-            isAdmin: 0,
+            isAdmin: 0
           });
         user.save()
           .then(() => res.status(201).json({ message: 'Utilisateur créé !' }))
@@ -97,14 +97,15 @@ exports.login = (req, res, next) => {
 // Permet de changer sa photo de profil
 
 exports.modify = (req, res, next) => {
-  const userId = req.body.id
+  
+  const userId = req.params.id
 
   User.update({
     firstname: req.body.firstname,
     lastname: req.body.lastname,
     pseudo: req.body.pseudo,
   },
-  {attribute: ['id', 'firstname', 'lastname', 'pseudo', 'email', 'isAdmin'], where: {id: userId}})
+  {attribute: ['firstname', 'lastname', 'pseudo'], where: {id: userId}})
   .then(() => res.status(200).json({message: "Modifications enregistrées !"}))
   .catch((error) => res.status(500).json({error}));
 };
@@ -112,11 +113,11 @@ exports.modify = (req, res, next) => {
 // Permet de supprimer son compte
 
 exports.delete = (req, res, next) => {  
-  const id = req.body.id
-
-  User.findOne({attribute: ['id'], where: {id: id}})
+  const userId = req.params.id
+  console.log(userId);
+  User.findOne({attribute: ['id'], where: {id: userId}})
     .then(user => {
-        User.destroy({attribute: ['id'], where: {id: id}})
+        User.destroy({attribute: ['id'], where: {id: userId}})
           .then(() => res.status(200).json({message: "Profil supprimé !"}))
           .catch((error) => res.status(400).json({error}))
       })
@@ -134,7 +135,8 @@ exports.getOne = (req, res, next) => {
 // Permet de prendre tout les utilisateurs
 
 exports.getAll = (req, res) => {
-  User.findAll({attributes: [ 'id', 'firstname', 'lastname', 'pseudo', 'email', 'isAdmin' ]})
+  User.findAll({attributes: [ 'id','pseudo' ]})
   .then((user) => res.status(200).json(user))
   .catch(err => console.log(err));
 }
+

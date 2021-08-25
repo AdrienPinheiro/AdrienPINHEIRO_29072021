@@ -1,23 +1,26 @@
 import axios from 'axios';
-import React from 'react';
-import { useSelector } from 'react-redux';
-import Logout from '../Log/Logout';
+import React, { useContext } from 'react';
+import { UidContext } from '../AppContext';
+import Cookies from 'universal-cookie';
 
 const DeleteProfil = () => {
 
-    const userData = useSelector((state) => state.userReducer)
+    const uid = useContext(UidContext);
+    const cookies = new Cookies();
+
+    const logout = () => {
+
+        cookies.remove('session_id', {path: '/'})
+        window.location = "/accueil"
+        
+    }
 
     const deleteProfil = () => {
 
-        axios({
-            method: "delete",
-            ulr: `${process.env.REACT_APP_API_URL}option/`,
-            data: {
-                id: userData.id
-            }
-        })
-            .then(() => Logout())
-            .catch((err) => console.log(err));
+        axios.delete(
+            URL = `${process.env.REACT_APP_API_URL}option/${uid}`,  
+        )
+        logout();
     }
 
     return (

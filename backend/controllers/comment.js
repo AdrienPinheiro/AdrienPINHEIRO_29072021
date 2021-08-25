@@ -15,7 +15,7 @@ exports.post = (req, res, next) => {
     //const decodedToken = jwt.verify(token, process.env.SECRET_TOKEN);
     //const userId = decodedToken.userId;
     const regexComment = /[a-zA-Z0-9 _.,'’(Ééèàû)&]+$/;
-    const userId = req.body.user_id
+    const userId = req.params.id
     const commentary = req.body.commentary
     const post_id = req.body.post_id
 
@@ -44,12 +44,17 @@ exports.post = (req, res, next) => {
 
 // Permet d'afficher tout les commentaires
 
-exports.getAll = (req, res, next) => {
-    const post_id = req.body.post_id
-
-    Comment.findAll({where: {post_id: post_id}})
+exports.getAll = (req, res) => {
+    const topicId = req.params.topicId
+    Comment.findAll({
+        attributes: [ 'id', 'user_id','post_id', 'commentary', 'likes', 'createdAt' ], 
+        where: {post_id: topicId},
+        order: [
+            ['createdAt', 'DESC']
+        ]
+    })
     .then(comment => res.status(200).json(comment))
-    .catch((error) => res.status(400).json({error}));
+    .catch((err) => res.status(400).json(err));
 }
 
 // Permet de modifier son commentaire
@@ -58,23 +63,23 @@ exports.modify = (req, res, next) => {
     //const token = req.headers.authorization.split(' ')[1];
     //const decodedToken = jwt.verify(token, process.env.SECRET);
     //const userId = decodedToken.userId;
-    const userId = req.body.user_id
+    const commentId = req.params.commentId
 
     Comment.update({
         commentary: req.body.commentary,
     },
-    {attributes: ['id'],where: {id: userId}})
+    {attributes: ['id'],where: {id: commentId}})
     .then(() => res.status(200).json({message: "Modifications enregistrées !"}))
     .catch((error) => res.status(500).json({error}));  
 }
 
 // Permet de supprimer son commentaire
 
-exports.delete = (req, res, next) => {
-    const post_id = req.body.post_id
-    const id = req.body.id
+exports.delete = (req, res) => {
+    const commentId = req.params.commentId
+    //const userId = req.params.id
     
-    Comment.destroy({attributes: ['id'], where: {post_id: post_id, id: id}})
+    Comment.destroy({attributes: ['id'], where: {id: commentId}})
     .then(() => res.status(200).json({message: "Message supprimé !"}))
     .catch(error => res.status(500).json({error}))
 }

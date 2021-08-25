@@ -20,7 +20,7 @@ const App = () => {
         console.log(res); 
         setuid(res.data)
       })
-      .catch(error => console.log("No token"))
+      .catch(err => console.log("No token"))
     }
     fetchToken();
 

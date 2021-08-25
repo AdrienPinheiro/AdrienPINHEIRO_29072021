@@ -1,5 +1,7 @@
 import axios from "axios";
 
+// Users
+
 export const GET_USERS = "GET_USERS";
 
 export const getUsers = () => {

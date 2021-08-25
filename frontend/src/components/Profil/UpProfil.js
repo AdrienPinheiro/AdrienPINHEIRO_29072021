@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { /*useDispatch,*/ useSelector } from 'react-redux';
+import React, { useContext, useState } from 'react';
 import axios from 'axios';
+import { UidContext } from '../AppContext';
 
 
 const UpProfil = () => {
@@ -8,28 +8,33 @@ const UpProfil = () => {
     const [firstname, setFirstname] = useState('');
     const [lastname, setLastname] = useState('');
     const [pseudo, setPseudo] = useState('');
-    const userData = useSelector((state) => state.userReducer)
+    const uid = useContext(UidContext);
 
 
 
-    const handleUpdateProfil = (e) => {
-        e.preventDefault(); 
+    const handleUpdateProfil = () => {
+
+        const data = {}
         
-        const data = {
-            id: userData.id,
-            firstname,
-            lastname,
-            pseudo
+        if(pseudo.length>0){
+            data.pseudo = pseudo
+        } 
+
+        if(firstname.length>0){
+            data.firstname = firstname
         }
 
-        axios({
-            method: "put",
-            ulr: `${process.env.REACT_APP_API_URL}option/`, data})
-        .then((res) => {
-            console.log(res);
-        })
-        .catch((err) => console.log(err))
-    }
+        if(lastname.length>0){
+            data.lastname = lastname
+        }
+
+        if(Object.keys(data).length > 0){
+            axios.put(
+                URL = `${process.env.REACT_APP_API_URL}option/${uid}`, data)
+            .then((res) => console.log(res))
+            .catch((err) => console.log(err))
+        }
+}
 
     return (
         <div className="profil-form">

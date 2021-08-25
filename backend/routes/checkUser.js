@@ -7,6 +7,4 @@ const checkUser = require('../controllers/checkUser.js')
 
 router.get('/', checkUser.requireAuth);
 
-router.get("/logout", checkUser.logout);
-
 module.exports = router;

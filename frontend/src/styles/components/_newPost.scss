@@ -1,0 +1,89 @@
+.home-header{
+    width: $col12;
+    .topic-container{
+        padding-top: 50px;
+        text-align: center;
+        width: $col8;
+        margin-left: 200px;
+        margin-bottom: 50px;
+        .topic-form{
+            padding: 50px;
+            width: $col12;
+            textarea{
+                resize: none;
+                width: $col8;
+                text-align: center;
+            }
+            .footer-form{
+                width: $col6;
+                flex-wrap: nowrap;
+                text-align: right;
+                i{
+                    position: relative;
+                    left: 50px;
+                }
+                input{
+                    opacity: 0;
+                }
+            }
+            .btn-send{
+                text-align: right;
+                width: $col10;
+            }
+            .card-container{
+                margin-left: 200px;
+                margin-top: 50px;
+                height: 400px;
+                width: $col8;
+                display: flex;
+                border: 1px solid black;
+                .card-left{
+                    font-size: 35px;
+                    font-weight: bold;
+                    padding-top: 15px;
+                    width: $col2;
+                    text-align: center;
+                    text-decoration: underline;
+                }
+                .card-right{
+                    padding-left: 45px;
+                    width: $col10;
+                    .card-header{
+                        display: flex;
+                        .title{
+                            padding-top: 15px;
+                            display: flex;
+                            width: $col4;
+                            h3{
+                                padding: 19px 15px 0 15px;
+                                font-size: 30px;
+                            }
+                        }
+                        span{
+                            padding-top: 40px;
+                            padding-right: 10px;
+                            width: $col8;
+                            text-align: right;
+                        }
+                    }
+                    p{ 
+                        width: $col12;
+                        padding-left: 30px;
+                        margin-top: 0;
+                        text-align: left;
+                        padding-top: 20px;
+                    }
+                    .picture{
+                        max-width: 300px;
+                        max-height: 250px;
+                    }                        
+                    iframe{
+                        width: 300px;
+                        height: 300px;
+                    }
+                }
+            }
+        }
+    }
+}
+
