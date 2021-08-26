@@ -104,16 +104,16 @@ const Card = ({topic}) => {
                         {userData.id === topic.user_id && (
                             <div className="btn-container">
                                 <div onClick={() => setIsUpdated(!isUpdated)}>
-                                    <i class="far fa-edit" alt="edit"/>
+                                    <i className="far fa-edit" alt="edit"/>
                                 </div>
                                 <DeleteCard id={topic.id}/>
                             </div>  
                         )}
                         <div className="card-footer">
                             <div className="comment-icon">
-                                <i onClick={() => commentReact()} class="far fa-comment-dots" alt="comments"/>
+                                <i onClick={() => commentReact()} className="far fa-comment-dots" alt="comments"/>
                             </div>
-                            <i class="fas fa-share" alt="share"/>
+                            <i className="fas fa-share" alt="share"/>
                         </div>
                         {
                             showComments && <CardComment topic={topic}/>

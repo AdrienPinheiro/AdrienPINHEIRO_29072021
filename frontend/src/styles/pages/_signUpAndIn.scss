@@ -3,15 +3,27 @@
     background-image: url("../img/background/background-forest.png");
     height: 800px;
     .logs-header{
+        @include mobile-only{
+            text-align: center;
+            padding-bottom: 20px;
+        }
         .logs-btn{
             padding-left: 50px;
             font-size: 30px;
             color: white;
+            @include mobile-only{
+                padding: 0;
+            }
         }
     }
     .logs-page{
         background-image: url("../img/background/texture-paper.png");
         margin: 0 100px;
+        @include mobile-only{
+            margin-inline-start: auto;
+            padding-left: 50px;
+
+        }
         .logs-container{
             .connection-form{
                 .form-container{
@@ -26,10 +38,16 @@
                     #signInForm{
                         color: white;
                         width: auto;
+                        @include mobile-only{
+                            text-align: left;
+                        }
                     }
                     #signUpForm{
                         color: white;
                         width: auto;
+                        @include mobile-only{
+                            text-align: left;
+                        }
                     }
                 }
             }

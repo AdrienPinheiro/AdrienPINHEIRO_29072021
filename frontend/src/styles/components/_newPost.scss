@@ -1,16 +1,35 @@
 .main{
     background: repeat url('../img/background/background-home.jpg');
+    .thread-container{
+        ul{
+            @include mobile-only{
+                padding: 0;
+                margin: 0;
+            }
+        }
+    }
     .home-header{
         width: $col12;
+        @include mobile-only{
+            text-align: -webkit-center;
+        }
         .topic-container{
             padding-top: 50px;
             text-align: center;
             width: $col8;
             margin-left: 200px;
             margin-bottom: 50px;
+            @include mobile-only{
+                margin-left: 0;
+                width: $col12;
+            }
             .topic-form{
                 padding: 50px;
                 width: $col12;
+                @include mobile-only{
+                    padding: 0;
+                    margin: 0;
+                }
                 textarea{
                     resize: none;
                     width: $col8;
@@ -33,20 +52,8 @@
                     width: $col10;
                 }
                 .card-container{
-                    margin-left: 200px;
                     margin-top: 50px;
-                    height: 400px;
-                    width: $col8;
-                    display: flex;
-                    border: 1px solid black;
-                    .card-left{
-                        font-size: 35px;
-                        font-weight: bold;
-                        padding-top: 15px;
-                        width: $col2;
-                        text-align: center;
-                        text-decoration: underline;
-                    }
+                    width: $col12;
                     .card-right{
                         padding-left: 45px;
                         width: $col10;

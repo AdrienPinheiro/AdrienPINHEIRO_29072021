@@ -8,8 +8,14 @@
         box-shadow: 5px 10px 15px 5px #A5A5A5;
         width: $col6;
         overflow: hidden;
+        @include mobile-only{
+            width: $col10;
+        }
         .card-header{
             display: flex;
+            @include mobile-only{
+                display: block;
+            }
             .pseudo{
                 font-weight: bold;
                 font-size: 30px;

@@ -74,7 +74,7 @@ const NewTopicForm = () => {
         <div className="topic-container">
             {
                 isLoading ? (
-                    <i class="fas fa-spinner fa-pulse" alt="loading"/>
+                    <i className="fas fa-spinner fa-pulse" alt="loading"/>
                 ) : (
                     <>  
                         <div className="topic-form">
@@ -97,7 +97,7 @@ const NewTopicForm = () => {
                                 {
                                     isEmpty(video) && (
                                         <>
-                                            <i class="fas fa-images" alt="image"/>
+                                            <i className="fas fa-images" alt="image"/>
                                             <input 
                                                 type="file" 
                                                 id="file-upload"
@@ -123,27 +123,27 @@ const NewTopicForm = () => {
                             </div>
                             {title || message || topicPicture || video.length > 10 ? (
                                 <li className="card-container">
-                                    <div className="card-left">
-                                        <h3>{userData.pseudo}</h3>
-                                    </div>
-                                    <div className="card-right">
+                                    <div className="card">
                                         <div className="card-header">
-                                            <div className="title">
-                                                <h3>{title}</h3>
+                                            <div className="pseudo">
+                                                <h3>{userData.pseudo}</h3>
                                             </div>
-                                            <span>{timestampParser(Date.now())}</span>
+                                            <div className="title-date">
+                                                <h3>{title}</h3>
+                                                <span>{timestampParser(Date.now())}</span>
+                                            </div>
                                         </div>
-                                            <p>{message}</p>
-                                            <img src={topicPicture} alt="" className="picture"/>
-                                            {video && (
-                                            <iframe
-                                                src={video}
-                                                frameBorder="0"
-                                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                                allowFullScreen
-                                                title={video}
-                                            ></iframe>
-                                            )}
+                                        <img src={topicPicture} alt="" className="picture"/>
+                                        {video && (
+                                        <iframe
+                                            src={video}
+                                            frameBorder="0"
+                                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                            allowFullScreen
+                                            title={video}
+                                        ></iframe>
+                                        )}
+                                        <p>{message}</p>
                                     </div>
                                 </li>
                             ) : null}

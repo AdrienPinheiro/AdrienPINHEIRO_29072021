@@ -13,7 +13,7 @@ const DeleteCard = (props) => {
             if (window.confirm("Voulez-vous vraiment supprimez ?"))
             deleteTopic();
         }}>
-            <i class="fas fa-trash" alt="trash"></i>
+            <i className="fas fa-trash" alt="trash"></i>
         </div>
     );
 };

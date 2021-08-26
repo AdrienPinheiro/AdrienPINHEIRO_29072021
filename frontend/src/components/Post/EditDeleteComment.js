@@ -39,7 +39,7 @@ const EditDeleteComment = ({ comment, topicId}) => {
             {
                 isAuthor && edit === false && (
                     <span onClick={() => setEdit(!edit)}>
-                        <i class="far fa-edit" alt="edit-comment"/>
+                        <i className="far fa-edit" alt="edit-comment"/>
                     </span>
                 )
             }
@@ -61,7 +61,7 @@ const EditDeleteComment = ({ comment, topicId}) => {
                                    handleDelete();
                                }
                            }}>
-                                <i class="far fa-trash-alt" alt="delete"></i>
+                                <i className="far fa-trash-alt" alt="delete"></i>
                            </span>
                         </div>
                         <input type="submit" value="Valider les modifications"/>

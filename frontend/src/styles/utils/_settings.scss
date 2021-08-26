@@ -12,7 +12,7 @@ $size-min: 18px;
 //$secondary:
 //$terciary:
 
-// Width
+// Variables
 
 $col1: 8.33%;
 $col2: 16.66%;
@@ -26,6 +26,40 @@ $col9: 75%;
 $col10: 83.33%;
 $col11: 91.66%;
 $col12: 100%;
+
+$breakpoint:(
+    mobile: 600px,
+    phone: 800px,
+    tablette: 1025px,
+    ecran: 1285px,
+);
+
+// mixin
+
+  
+@mixin mobile-only {
+    @media screen and (max-width: map-get($breakpoint, mobile)){
+        @content
+    }
+};
+
+@mixin phone-only {
+    @media screen and (max-width: map-get($breakpoint, phone)) {
+        @content
+    }
+};
+
+@mixin tablette-only {
+    @media screen and (max-width: map-get($breakpoint, tablette)) {
+        @content
+    }
+};
+
+@mixin ecran {
+    @media screen and (max-width: map-get($breakpoint, ecran)) {
+        @content
+    }    
+}
 
 //General
 
