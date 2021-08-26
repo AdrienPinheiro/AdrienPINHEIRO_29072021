@@ -1,3 +1,4 @@
+//import logger from 'redux-logger'
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
@@ -8,13 +9,12 @@ import { createStore } from 'redux';
 import { composeWithDevTools} from 'redux-devtools-extension';
 import thunk from 'redux-thunk';
 import rootReducer from './reducers'
-import logger from 'redux-logger'
 import { getUsers } from './actions/users.actions';
 import axios from 'axios';
 import Cookies from 'universal-cookie';
 
 const store = createStore (
-  rootReducer, composeWithDevTools(applyMiddleware(thunk, logger))
+  rootReducer, composeWithDevTools(applyMiddleware(thunk))
 )
 
 let token = new Cookies().get('session_id');
