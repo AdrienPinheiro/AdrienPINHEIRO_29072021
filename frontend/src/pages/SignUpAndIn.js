@@ -9,7 +9,7 @@ const SignUpAndIn = () => {
     return (
         <div className="logs">
             <div className="logs-header">
-            <NavLink exact to="/accueil" className="logs-btn"><i class="fas fa-arrow-left"></i></NavLink>
+            <NavLink exact to="/accueil" className="logs-btn"><i class="fas fa-arrow-left" alt="back"></i></NavLink>
             </div>
             {uid ? (
                 <h1>Update PAGE</h1>

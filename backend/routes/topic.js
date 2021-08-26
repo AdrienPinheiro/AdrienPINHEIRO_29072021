@@ -7,7 +7,6 @@ const auth = require('../middleware/auth')
 
 // Va chercher les demandes correspondantes suivant la demande: soit un log soit un sign
 router.post('/', auth, multer, topicCtrl.post);
-router.post('/likeOrUnlike/:id', auth, topicCtrl.likeOrUnlike);
 
 router.get('/', multer, topicCtrl.getAll);
 

@@ -10,6 +10,7 @@ const MIME_TYPES = {
 }
 
 // Prend le dossier "images" et stock les images en ajoutant la date dans le nom de l'image pour éviter des doublons
+
 const storage = multer.diskStorage({
     destination: (req, file, callback) =>{
         callback(null, '../frontend/public/uploads/post/')
@@ -22,5 +23,6 @@ const storage = multer.diskStorage({
         callback(null, clearName + Date.now() + '.' + extension);
     }
 })
+
 
 module.exports = multer({storage}).single('image');

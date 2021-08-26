@@ -10,7 +10,6 @@ const UpdateProfil = () => {
     return (
         <div className="profil-container">
             <div className="profil-img">  
-                <img src="" alt=""/>
                 <h1>Profil de {userData.firstname} {userData.lastname}</h1>
                 <h3>contact: {userData.email}</h3>
             </div>

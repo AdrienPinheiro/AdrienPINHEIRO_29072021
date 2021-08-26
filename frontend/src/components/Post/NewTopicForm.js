@@ -8,14 +8,14 @@ const NewTopicForm = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [title, setTitle] = useState('')
     const [message, setMessage] = useState('');
-    const [topicPicture, setTopicPicture] = useState(null);
+    const [topicPicture, setTopicPicture] = useState('');
     const [video, setVideo] = useState('');
     const [file, setFile] = useState('');
     const userData = useSelector((state) => state.userReducer)
     const dispatch = useDispatch();
 
     const handleTopic = async () => {
-        if(message || topicPicture || video) {
+        if(title || message || topicPicture || video) {
             const data = new FormData();
             data.append('user_id', userData.id);
             data.append('title', title);
@@ -28,6 +28,7 @@ const NewTopicForm = () => {
             await dispatch(addTopic(data));
             dispatch(getTopics());
             cancelTopic();
+            window.location.reload();
         } else {
             alert("Veuillez entrer un message !")
         }
@@ -72,7 +73,7 @@ const NewTopicForm = () => {
         <div className="topic-container">
             {
                 isLoading ? (
-                    <i class="fas fa-spinner fa-pulse"/>
+                    <i class="fas fa-spinner fa-pulse" alt="loading"/>
                 ) : (
                     <>  
                         <div className="topic-form">

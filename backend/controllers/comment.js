@@ -11,10 +11,7 @@ const Comment = db.Comment;
 // Permet de créer un commentaire
 
 exports.post = (req, res, next) => {
-    //const token = req.headers.authorization.split(' ')[1];
-    //const decodedToken = jwt.verify(token, process.env.SECRET_TOKEN);
-    //const userId = decodedToken.userId;
-    const regexComment = /[a-zA-Z0-9 _.,'’(Ééèàû)&]+$/;
+   
     const userId = req.params.id
     const commentary = req.body.commentary
     const post_id = req.body.post_id
@@ -27,19 +24,14 @@ exports.post = (req, res, next) => {
     })
     .catch(error => res.status(500).json({error}));
 
-    if(!commentary.match(regexComment)){
-        return res.status(400).json({error: "Caractères invalides dans le post"});
-    } else {
-        const comment = Comment.create({
-            user_id: userId,
-            post_id: post_id,
-            commentary: req.body.commentary,
-            likes: 0,
-            dislikes: 0
-        })
-        .then(() => res.status(200).json({message: "Commentaire créé !"}))
-        .catch(error => res.status(500).json( error ));
-    }
+    const comment = Comment.create({
+        user_id: userId,
+        post_id: post_id,
+        commentary: req.body.commentary
+    })
+    .then(() => res.status(200).json({message: "Commentaire créé !"}))
+    .catch(error => res.status(500).json( error ));
+    
 };
 
 // Permet d'afficher tout les commentaires
@@ -47,7 +39,7 @@ exports.post = (req, res, next) => {
 exports.getAll = (req, res) => {
     const topicId = req.params.topicId
     Comment.findAll({
-        attributes: [ 'id', 'user_id','post_id', 'commentary', 'likes', 'createdAt' ], 
+        attributes: [ 'id', 'user_id','post_id', 'commentary', 'createdAt' ], 
         where: {post_id: topicId},
         order: [
             ['createdAt', 'DESC']

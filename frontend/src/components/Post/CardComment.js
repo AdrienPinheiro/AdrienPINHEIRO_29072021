@@ -18,9 +18,7 @@ const CardComment = ({topic}) => {
 
     const dispatch = useDispatch();
 
-    const handleComment = (e) => {
-        e.preventDefault();
-
+    const handleComment = () => {
         if(text) {
             dispatch(addComment(topic.id, uid, text))
                 .then(() => dispatch(getTopics()))
@@ -30,7 +28,7 @@ const CardComment = ({topic}) => {
 
     useEffect(() => {
         dispatch(getComments(topic.id));
-    }, [topic.id])
+    }, [topic.id, dispatch])
     
 
     return (

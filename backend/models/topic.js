@@ -28,8 +28,7 @@ module.exports = (sequelize, DataTypes) => {
     title: DataTypes.STRING,
     content: DataTypes.STRING,
     image: DataTypes.STRING,
-    video: DataTypes.STRING,
-    likes: DataTypes.INTEGER
+    video: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'Topic',

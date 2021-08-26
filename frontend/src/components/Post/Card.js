@@ -4,7 +4,6 @@ import { updateTopic } from '../../actions/topic.actions';
 import { dateParser, isEmpty } from '../Utils';
 import CardComment from './CardComment';
 import DeleteCard from './DeleteCard';
-import LikeButton from './LikeButton';
 import EventBus from '../EventBus';
 
 
@@ -38,12 +37,12 @@ const Card = ({topic}) => {
             setShowComments(false);
         }
     });
-   }, [usersData])
+   }, [usersData, topic.id])
 
     return (        
         <li className="card-container" key={topic.id}>
             {isLoading ? (
-                <i className="fas fa-spinner fa-spin"></i>
+                <i className="fas fa-spinner fa-spin" alt="loading"></i>
             ) : (
                 <>
                     <div className="card-left">
@@ -90,7 +89,7 @@ const Card = ({topic}) => {
                                 </div>
                             )
                         }
-                        {topic.image && <img src={`frontend${topic.image}`} alt="card-img" className="card-img"/>}
+                        {topic.image && <img src={`uploads/post/${topic.image}`} alt="card-img" className="card-img"/>}
                         {topic.video && (
                             <iframe
                                 width="500"
@@ -114,7 +113,6 @@ const Card = ({topic}) => {
                             <div className="comment-icon">
                                 <i onClick={() => commentReact()} class="far fa-comment-dots" alt="comments"/>
                             </div>
-                            <LikeButton topic={topic}/>
                             <i class="fas fa-share" alt="share"/>
                         </div>
                         {

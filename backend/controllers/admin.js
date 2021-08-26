@@ -1,6 +1,5 @@
 // Import 
 
-const { resolveSoa } = require('dns');
 const fs = require('fs');
 const jwt = require('jsonwebtoken');
 const db = require ('../models/index');
@@ -12,15 +11,16 @@ const Comment = db.Comment;
 // Permet d'afficher tout les utilisateurs non admin
 
 exports.getAllUser = (req, res, next) => {
-    User.findAll({where: {isAdmin: 0}})
-    .then(users => res.status(200).json(users))
-    .catch(error => res.status(400).json({error}))
+    User.findAll({attributes: [ 'id', 'firstname', 'lastname', 'pseudo', 'email', 'isAdmin']})
+    .then(user => res.status(200).json(user))
+    .catch(error => res.status(400).json(error))
 }
 
 // Permet d'afficher un utilisateur et ses informations
 
 exports.getOneUser = (req, res, next) => {
-    User.find({attributes: [ 'id', 'firstname', 'lastname', 'pseudo', 'email', 'isAdmin', 'user_img'],where: { id: req.params.id }})
+    const userId = req.params.id;
+    User.findOne({attributes: [ 'id', 'firstname', 'lastname', 'pseudo', 'email', 'isAdmin'],where: { id: userId }})
     .then(user => res.status(200).json({user}))
     .catch(error => res.status(400).json({error}))
 }
