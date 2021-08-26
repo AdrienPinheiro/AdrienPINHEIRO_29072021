@@ -3,7 +3,7 @@ import UpdateProfil from '../components/Profil/UpdateProfil';
 
 const Option = () => {
     return (
-        <div className="option">
+        <div className="options">
             <UpdateProfil/>
         </div>
     );

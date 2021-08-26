@@ -36,6 +36,9 @@ const Description = () => {
                 </div>
                 
             </div>
+            <div className="logo-white">
+                <img src="./img/logo-simple-white.png" alt="logo"/>
+            </div>
         </div>
     );
 };

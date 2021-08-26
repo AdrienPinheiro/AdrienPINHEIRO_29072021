@@ -62,6 +62,7 @@ const NewTopicForm = () => {
                     findLink.splice(i, 1);
                     setMessage(findLink.join(" "));
                     setTopicPicture('');
+                    setFile('');
                 }
             }
         };
@@ -101,7 +102,7 @@ const NewTopicForm = () => {
                                                 type="file" 
                                                 id="file-upload"
                                                 name="file" 
-                                                accept=".jpg , .jpeg , png" 
+                                                accept=".jpg , .jpeg , .png, .webp, .gif" 
                                                 onChange={(e) => handlePicture(e)}
                                             />
 

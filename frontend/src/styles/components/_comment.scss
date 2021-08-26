@@ -1,39 +1,37 @@
 .comments-container{
     .comment-container{
-        margin: 20px 0;
-        border: 1px dashed black;
+        text-align: left;
+        border-top: 1px dashed black;
+        border-bottom: 1px dashed black;
+        margin-bottom: 10px;
         .left-part{
             display: flex;
+            justify-content: space-between;
+            padding: 0 20px;
             p{
-                font-size: 20px;
-                font-weight: bold;
-                width: $col4;
+                margin: 15px 0;
+                padding: 0;
             }
             span{
-                width: $col8;
-                padding-top: 20px;
-                text-align: right;
-                padding-right: 10px;
+                margin: 15px 0;
+
             }
         }
         .right-part{
             .comment{
-                display: flex;
                 p{
-                    padding: 0 0 0 5px;
+                   margin: 0 0 10px 0;
                 }
                 .edit-comment{
-                    span{
-                        i{
-                            padding-right: 10px;
-                        }
-                    }
+                    text-align: right;
+                    padding-right: 5px;
                 }
             }
         }
     }
     .comment-form{
-        margin-top: 10px;
         display: flex;
+        justify-content: center;
+        margin-bottom: 10px;
     }
 }

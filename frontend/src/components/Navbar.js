@@ -18,7 +18,7 @@ const Navbar = () => {
                         <div className="logo">
                             <NavLink exact to="home">
                                 <div className="logo-img">
-                                    <img src="./img/logo-simple-dark.png" alt="logo"/>
+                                    <img src="./img/logo-simple-color.png" alt="logo"/>
                                 </div>
                             </NavLink>
                         </div>
@@ -30,7 +30,7 @@ const Navbar = () => {
                             </li>
                             <li className="option">
                                 <NavLink exact to="/option">
-                                    <p>Option</p>
+                                    <p>Options</p>
                                 </NavLink>
                             </li>
                             <Logout/>

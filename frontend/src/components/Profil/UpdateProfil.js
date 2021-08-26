@@ -9,6 +9,9 @@ const UpdateProfil = () => {
 
     return (
         <div className="profil-container">
+            <div className="logo-option">
+                <img src="./img/logo.png" alt="logo"/>
+            </div>
             <div className="profil-img">  
                 <h1>Profil de {userData.firstname} {userData.lastname}</h1>
                 <h3>contact: {userData.email}</h3>

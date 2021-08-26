@@ -1,74 +1,51 @@
-.thread-container{
-    width: $col12;
-    .card-container{
-    margin-left: 200px;
-    margin-top: 50px;
-    width: $col8;
-    display: flex;
-    border: 1px solid black;
-    overflow: hidden;
-    .card-left{
-        font-size: 40px;
-        font-weight: bold;
-        padding-top: 15px;
-        width: $col2;
-        text-align: center;
-        text-decoration: underline;
-    }
-    .card-right{
-        padding-left: 45px;
-        width: $col10;
+.card-container{
+    margin-bottom: 50px;
+    text-align: -webkit-center;
+    .card{
+        border: 1px solid black;
+        background-color: rgb(224, 224, 224);
+        border-radius: 10px;
+        box-shadow: 5px 10px 15px 5px #A5A5A5;
+        width: $col6;
+        overflow: hidden;
         .card-header{
             display: flex;
-            .title{
-                display: flex;
-                width: $col4;
-                padding-top: 25px;
+            .pseudo{
+                font-weight: bold;
+                font-size: 30px;
+                padding: 10px;
+            }
+            .title-date{
+                padding: 5px 0 5px 20px;
+                text-align: left;
                 h3{
-                    font-size: 30px;
+                    font-weight: normal;
+                    font-size: 23px;
                 }
                 span{
-                    h3{
-                        font-size: 20px;
-                    }
+                    color: rgb(66, 66, 66);
                 }
             }
-            span{
-                padding-top: 30px;
-                padding-right: 10px;
-                width: $col8;
-                text-align: right;
-            }
+        }
+        img{
+            object-fit: cover;
+            max-width: $col10;
+            max-height: $col6;
         }
         p{
-            padding-top: 20px;
-            padding-left: 20px;
-            margin-top: 0;
-            flex-wrap: wrap;
+            padding: 0 50px;
         }
         .btn-container{
+            text-align: right;
             display: flex;
-            .fa-trash{
-                padding-left: 10px;
-            }
+            padding: 0 30px;
+            justify-content: space-evenly;
         }
         .card-footer{
             display: flex;
-            align-items: center;
+            justify-content: space-around;
+            padding: 0 30px;
             margin-bottom: 10px;
-            .comment-icon{
-                width: $col8;
-                img{
-                    border: 1px solid black;
-                }
-            }
-            h6{
-                width: $col2;
-            }
-            img{
-                width: $col2;
-            }
         }
-    }
     }
 }

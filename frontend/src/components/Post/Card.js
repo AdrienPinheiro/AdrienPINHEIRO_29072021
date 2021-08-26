@@ -45,19 +45,19 @@ const Card = ({topic}) => {
                 <i className="fas fa-spinner fa-spin" alt="loading"></i>
             ) : (
                 <>
-                    <div className="card-left">
-                        {
-                            !isEmpty(usersData[0]) &&
-                            usersData
-                                .map((user) => {
-                                if(user.id === topic.user_id) return user.pseudo
-                                else return null
-                            }).join('')
-                        }
-                    </div>
-                    <div className="card-right">
+                    <div className="card">
                         <div className="card-header">
-                            <div className="title">
+                            <div className="pseudo">
+                                {
+                                    !isEmpty(usersData[0]) &&
+                                    usersData
+                                        .map((user) => {
+                                        if(user.id === topic.user_id) return user.pseudo
+                                        else return null
+                                    }).join('')
+                                }
+                            </div>
+                            <div className="title-date">
                                 <h3>
                                     {
                                         !isEmpty(usersData[0]) &&
@@ -68,9 +68,21 @@ const Card = ({topic}) => {
                                         }).join('')
                                     }
                                 </h3>
+                                <span>{dateParser(topic.createdAt)}</span>
                             </div>
-                            <span>{dateParser(topic.createdAt)}</span>
                         </div>
+                        {topic.image && <img src={`uploads/post/${topic.image}`} alt="card-img" className="card-img"/>}
+                        {topic.video && (
+                            <iframe
+                                width="500"
+                                height="300"
+                                src={topic.video}
+                                frameBorder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowFullScreen
+                                title={topic.id}
+                            ></iframe>
+                        )}
                         {
                             isUpdated === false && <p>{topic.content}</p>
                         }
@@ -89,18 +101,6 @@ const Card = ({topic}) => {
                                 </div>
                             )
                         }
-                        {topic.image && <img src={`uploads/post/${topic.image}`} alt="card-img" className="card-img"/>}
-                        {topic.video && (
-                            <iframe
-                                width="500"
-                                height="300"
-                                src={topic.video}
-                                frameBorder="0"
-                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                allowFullScreen
-                                title={topic.id}
-                            ></iframe>
-                        )}
                         {userData.id === topic.user_id && (
                             <div className="btn-container">
                                 <div onClick={() => setIsUpdated(!isUpdated)}>

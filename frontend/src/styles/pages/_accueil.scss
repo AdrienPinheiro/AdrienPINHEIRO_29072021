@@ -6,6 +6,7 @@
                  .first-text-background{
                      height: 300px;
                      background-image: url("../img/background/background-entreprise.png");
+                     background-size: cover;
                      padding: 70px;
                      align-content: center;
                      padding-top: 120px;
@@ -33,6 +34,12 @@
                          }
                      }
                  }
+            }
+            .logo-white{
+                background-color: black;
+                img{
+                    padding: 30px;
+                }
             }
         }
     } 

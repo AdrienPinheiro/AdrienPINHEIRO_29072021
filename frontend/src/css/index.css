@@ -50,6 +50,7 @@ li {
 .accueil .accueil-container .accueil-description .first-text .first-text-background {
   height: 300px;
   background-image: url("../img/background/background-entreprise.png");
+  background-size: cover;
   padding: 70px;
   -ms-flex-line-pack: center;
       align-content: center;
@@ -84,6 +85,14 @@ li {
 .accueil .accueil-container .accueil-description .second-text .second-text-background .second-text-layer p {
   padding-top: 180px;
   color: white;
+}
+
+.accueil .accueil-container .accueil-description .logo-white {
+  background-color: black;
+}
+
+.accueil .accueil-container .accueil-description .logo-white img {
+  padding: 30px;
 }
 
 .logs {
@@ -126,29 +135,38 @@ li {
   width: auto;
 }
 
-.option .profil-container {
+.options {
+  background: repeat url("../img/background/bakcground-option.jpg");
+}
+
+.options .profil-container {
   padding: 50px;
   height: 750px;
   text-align: center;
 }
 
-.option .profil-container .profil-img {
+.options .profil-container .logo-option img {
+  width: 250px;
+  height: 130px;
+}
+
+.options .profil-container .profil-img {
   padding: 30px;
 }
 
-.option .profil-container .profil-img img {
+.options .profil-container .profil-img img {
   display: none;
 }
 
-.option .profil-container .profil-img h1 {
+.options .profil-container .profil-img h1 {
   padding-bottom: 10px;
 }
 
-.option .profil-container .profil-img h3 {
+.options .profil-container .profil-img h3 {
   padding-top: 20px;
 }
 
-.option .profil-container .profil-delete {
+.options .profil-container .profil-delete {
   padding-top: 40px;
 }
 
@@ -250,113 +268,88 @@ li {
   font-weight: bold;
 }
 
-.thread-container {
-  width: 100%;
+.card-container {
+  margin-bottom: 50px;
+  text-align: -webkit-center;
 }
 
-.thread-container .card-container {
-  margin-left: 200px;
-  margin-top: 50px;
-  width: 66.66%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+.card-container .card {
   border: 1px solid black;
+  background-color: #e0e0e0;
+  border-radius: 10px;
+  -webkit-box-shadow: 5px 10px 15px 5px #A5A5A5;
+          box-shadow: 5px 10px 15px 5px #A5A5A5;
+  width: 50%;
   overflow: hidden;
 }
 
-.thread-container .card-container .card-left {
-  font-size: 40px;
+.card-container .card .card-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.card-container .card .card-header .pseudo {
   font-weight: bold;
-  padding-top: 15px;
-  width: 16.66%;
-  text-align: center;
-  text-decoration: underline;
-}
-
-.thread-container .card-container .card-right {
-  padding-left: 45px;
-  width: 83.33%;
-}
-
-.thread-container .card-container .card-right .card-header {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-}
-
-.thread-container .card-container .card-right .card-header .title {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 33.33%;
-  padding-top: 25px;
-}
-
-.thread-container .card-container .card-right .card-header .title h3 {
   font-size: 30px;
+  padding: 10px;
 }
 
-.thread-container .card-container .card-right .card-header .title span h3 {
-  font-size: 20px;
+.card-container .card .card-header .title-date {
+  padding: 5px 0 5px 20px;
+  text-align: left;
 }
 
-.thread-container .card-container .card-right .card-header span {
-  padding-top: 30px;
-  padding-right: 10px;
-  width: 66.66%;
+.card-container .card .card-header .title-date h3 {
+  font-weight: normal;
+  font-size: 23px;
+}
+
+.card-container .card .card-header .title-date span {
+  color: #424242;
+}
+
+.card-container .card img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  max-width: 83.33%;
+  max-height: 50%;
+}
+
+.card-container .card p {
+  padding: 0 50px;
+}
+
+.card-container .card .btn-container {
   text-align: right;
-}
-
-.thread-container .card-container .card-right p {
-  padding-top: 20px;
-  padding-left: 20px;
-  margin-top: 0;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-}
-
-.thread-container .card-container .card-right .btn-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  padding: 0 30px;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
 }
 
-.thread-container .card-container .card-right .btn-container .fa-trash {
-  padding-left: 10px;
-}
-
-.thread-container .card-container .card-right .card-footer {
+.card-container .card .card-footer {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: 0 30px;
   margin-bottom: 10px;
 }
 
-.thread-container .card-container .card-right .card-footer .comment-icon {
-  width: 66.66%;
+.main {
+  background: repeat url("../img/background/background-home.jpg");
 }
 
-.thread-container .card-container .card-right .card-footer .comment-icon img {
-  border: 1px solid black;
-}
-
-.thread-container .card-container .card-right .card-footer h6 {
-  width: 16.66%;
-}
-
-.thread-container .card-container .card-right .card-footer img {
-  width: 16.66%;
-}
-
-.home-header {
+.main .home-header {
   width: 100%;
 }
 
-.home-header .topic-container {
+.main .home-header .topic-container {
   padding-top: 50px;
   text-align: center;
   width: 66.66%;
@@ -364,39 +357,39 @@ li {
   margin-bottom: 50px;
 }
 
-.home-header .topic-container .topic-form {
+.main .home-header .topic-container .topic-form {
   padding: 50px;
   width: 100%;
 }
 
-.home-header .topic-container .topic-form textarea {
+.main .home-header .topic-container .topic-form textarea {
   resize: none;
   width: 66.66%;
   text-align: center;
 }
 
-.home-header .topic-container .topic-form .footer-form {
+.main .home-header .topic-container .topic-form .footer-form {
   width: 50%;
   -ms-flex-wrap: nowrap;
       flex-wrap: nowrap;
   text-align: right;
 }
 
-.home-header .topic-container .topic-form .footer-form i {
+.main .home-header .topic-container .topic-form .footer-form i {
   position: relative;
   left: 50px;
 }
 
-.home-header .topic-container .topic-form .footer-form input {
+.main .home-header .topic-container .topic-form .footer-form input {
   opacity: 0;
 }
 
-.home-header .topic-container .topic-form .btn-send {
+.main .home-header .topic-container .topic-form .btn-send {
   text-align: right;
   width: 83.33%;
 }
 
-.home-header .topic-container .topic-form .card-container {
+.main .home-header .topic-container .topic-form .card-container {
   margin-left: 200px;
   margin-top: 50px;
   height: 400px;
@@ -407,7 +400,7 @@ li {
   border: 1px solid black;
 }
 
-.home-header .topic-container .topic-form .card-container .card-left {
+.main .home-header .topic-container .topic-form .card-container .card-left {
   font-size: 35px;
   font-weight: bold;
   padding-top: 15px;
@@ -416,18 +409,18 @@ li {
   text-decoration: underline;
 }
 
-.home-header .topic-container .topic-form .card-container .card-right {
+.main .home-header .topic-container .topic-form .card-container .card-right {
   padding-left: 45px;
   width: 83.33%;
 }
 
-.home-header .topic-container .topic-form .card-container .card-right .card-header {
+.main .home-header .topic-container .topic-form .card-container .card-right .card-header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.home-header .topic-container .topic-form .card-container .card-right .card-header .title {
+.main .home-header .topic-container .topic-form .card-container .card-right .card-header .title {
   padding-top: 15px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -435,19 +428,19 @@ li {
   width: 33.33%;
 }
 
-.home-header .topic-container .topic-form .card-container .card-right .card-header .title h3 {
+.main .home-header .topic-container .topic-form .card-container .card-right .card-header .title h3 {
   padding: 19px 15px 0 15px;
   font-size: 30px;
 }
 
-.home-header .topic-container .topic-form .card-container .card-right .card-header span {
+.main .home-header .topic-container .topic-form .card-container .card-right .card-header span {
   padding-top: 40px;
   padding-right: 10px;
   width: 66.66%;
   text-align: right;
 }
 
-.home-header .topic-container .topic-form .card-container .card-right p {
+.main .home-header .topic-container .topic-form .card-container .card-right p {
   width: 100%;
   padding-left: 30px;
   margin-top: 0;
@@ -455,58 +448,58 @@ li {
   padding-top: 20px;
 }
 
-.home-header .topic-container .topic-form .card-container .card-right .picture {
+.main .home-header .topic-container .topic-form .card-container .card-right .picture {
   max-width: 300px;
   max-height: 250px;
 }
 
-.home-header .topic-container .topic-form .card-container .card-right iframe {
+.main .home-header .topic-container .topic-form .card-container .card-right iframe {
   width: 300px;
   height: 300px;
 }
 
 .comments-container .comment-container {
-  margin: 20px 0;
-  border: 1px dashed black;
+  text-align: left;
+  border-top: 1px dashed black;
+  border-bottom: 1px dashed black;
+  margin-bottom: 10px;
 }
 
 .comments-container .comment-container .left-part {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 20px;
 }
 
 .comments-container .comment-container .left-part p {
-  font-size: 20px;
-  font-weight: bold;
-  width: 33.33%;
+  margin: 15px 0;
+  padding: 0;
 }
 
 .comments-container .comment-container .left-part span {
-  width: 66.66%;
-  padding-top: 20px;
-  text-align: right;
-  padding-right: 10px;
-}
-
-.comments-container .comment-container .right-part .comment {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  margin: 15px 0;
 }
 
 .comments-container .comment-container .right-part .comment p {
-  padding: 0 0 0 5px;
+  margin: 0 0 10px 0;
 }
 
-.comments-container .comment-container .right-part .comment .edit-comment span i {
-  padding-right: 10px;
+.comments-container .comment-container .right-part .comment .edit-comment {
+  text-align: right;
+  padding-right: 5px;
 }
 
 .comments-container .comment-form {
-  margin-top: 10px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 10px;
 }
 /*# sourceMappingURL=index.css.map */

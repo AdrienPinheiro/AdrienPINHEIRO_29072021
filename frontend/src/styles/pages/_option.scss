@@ -1,8 +1,15 @@
-.option{
+.options{
+    background: repeat url('../img/background/bakcground-option.jpg');
     .profil-container{
         padding: 50px;
         height: 750px;
         text-align: center;
+        .logo-option{
+            img{
+                width: 250px;
+                height: 130px;
+            }
+        }
         .profil-img{
             padding: 30px;
             img{
