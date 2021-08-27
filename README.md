@@ -14,7 +14,7 @@ Pour démarrer l'application backend:
 
     Créez une base de données nommée "groupomania" dans votre base de données mysql.
 
-    Prendre le fichier mysql et l'importer dans votre base de donnée.
+    Prendre le fichier mysql et l'importer dans votre base de donnée (puis l'enlever de votre dossier)
 
     Clôner le repo sur lequel vous vous trouvez.
 
